@@ -1,4 +1,4 @@
-package slelectionsort
+package selection_sort
 
 /**
 	选择排序：
