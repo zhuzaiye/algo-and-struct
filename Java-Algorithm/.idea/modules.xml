@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Java-Algorithm.iml" filepath="$PROJECT_DIR$/.idea/Java-Algorithm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/go-leetcode/go-leetcode.iml" filepath="$PROJECT_DIR$/go-leetcode/go-leetcode.iml" />
-    </modules>
-  </component>
-</project>
