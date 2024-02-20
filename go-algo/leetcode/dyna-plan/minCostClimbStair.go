@@ -1,18 +1,28 @@
 package dyna_plan
 
-func minCostClimbStair(cost []int) int {
-	length := len(cost)
-	a, b := cost[0], cost[1]
-	for i := 2; i < length; i++ {
-		ans := min(a, b) + cost[i]
-		a, b = b, ans
-	}
-	return min(a, b)
-}
+// 爬楼梯最小消耗[最优方案]
 
-func min(a, b int) int {
-	if a <= b {
-		return a
+// 动态规划更适合: 最优子结构
+/* 爬楼梯最小代价：动态规划 */
+func minCostClimbingStairsDP(cost []int) int {
+	n := len(cost) - 1
+	if n == 1 || n == 2 {
+		return cost[n]
 	}
-	return b
+	min := func(a, b int) int {
+		if a < b {
+			return a
+		}
+		return b
+	}
+	// 初始化 dp 表，用于存储子问题的解
+	dp := make([]int, n+1)
+	// 初始状态：预设最小子问题的解
+	dp[1] = cost[1]
+	dp[2] = cost[2]
+	// 状态转移：从较小子问题逐步求解较大子问题
+	for i := 3; i <= n; i++ {
+		dp[i] = min(dp[i-1], dp[i-2]) + cost[i]
+	}
+	return dp[n]
 }
