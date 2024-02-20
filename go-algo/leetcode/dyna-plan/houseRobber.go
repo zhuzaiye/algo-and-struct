@@ -1,5 +1,7 @@
 package dyna_plan
 
+import "go-algo/pkg/utils"
+
 // House Robber
 // 不也能抢劫相邻的房子, 求解能够抢到的最多钱财?
 
@@ -16,17 +18,11 @@ func houseRobberDp(nums []int) int {
 	if n == 0 {
 		return 0
 	}
-	max := func(a, b int) int {
-		if a < b {
-			return b
-		}
-		return a
-	}
 	dp := make([]int, n+1)
 	dp[0] = 0
 	dp[1] = nums[0]
 	for i := 2; i <= n; i++ {
-		dp[i] = max(dp[i-1], dp[i-2]+nums[i-1])
+		dp[i] = utils.Max(dp[i-1], dp[i-2]+nums[i-1])
 	}
 	return dp[n]
 }
@@ -39,17 +35,23 @@ func houseRobberDpWithMinSpace(nums []int) int {
 	if n == 1 {
 		return nums[0]
 	}
-	max := func(a, b int) int {
-		if a < b {
-			return b
-		}
-		return a
-	}
 	dp1, dp2, curr := 0, 0, 0
 	for i := 0; i < n; i++ {
-		curr = max(dp1, dp2+nums[i])
+		curr = utils.Max(dp1, dp2+nums[i])
 		dp2 = dp1
 		dp1 = curr
 	}
 	return curr
+}
+
+func houseRobberCycle(nums []int) int {
+	n := len(nums)
+	if n == 1 {
+		return nums[n-1]
+	}
+	if n == 2 {
+		return utils.Max(nums[n-1], nums[n-2])
+	}
+	return utils.Max(houseRobberDpWithMinSpace(nums[1:]), houseRobberDpWithMinSpace(nums[:n-2]))
+
 }
