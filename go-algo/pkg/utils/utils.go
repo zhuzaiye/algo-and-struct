@@ -7,7 +7,7 @@ package utils
 
 import "fmt"
 
-//创建链表,按顺序创建链表
+// CreateLNode 创建链表,按顺序创建链表
 func CreateLNode(node *LNode, max int) {
 	currentNode := node
 	for i := 1; i < max; i++ {
@@ -17,7 +17,7 @@ func CreateLNode(node *LNode, max int) {
 	}
 }
 
-//打印链表
+// PrintLNode 打印链表
 func PrintLNode(info string, node *LNode) {
 	fmt.Print(info)
 	for cur := node.Next; cur != nil; cur = cur.Next {

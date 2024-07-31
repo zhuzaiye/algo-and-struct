@@ -5,7 +5,7 @@
 
 package linked_list
 
-import "Go-Algorithm/pkg/utils"
+import "go-algo/pkg/utils"
 
 /*
  链表逆序
@@ -28,7 +28,7 @@ func ReverseInPlace(node *utils.LNode) {
 	node.Next = pre
 }
 
-//递归式逆序链表
+// 递归式逆序链表
 func RecursiveReverseChild(node *utils.LNode) *utils.LNode {
 	if node == nil || node.Next == nil {
 		return node
@@ -46,7 +46,7 @@ func RecursiveReverse(node *utils.LNode) {
 	node.Next = newHead
 }
 
-//插入式逆序链表
+// 插入式逆序链表
 func InsertReverse(node *utils.LNode) {
 	if node == nil || node.Next == nil {
 		return
@@ -90,5 +90,3 @@ func RemoveDup(node *utils.LNode) {
 		}
 	}
 }
-
-
