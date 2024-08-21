@@ -1,4 +1,4 @@
-package array
+package arrays
 
 // 问题： 给定数组nums,找到一个具有最大和的连续数组(子数组中最少包含一个数字), 返回这个最大连续数组的和。
 

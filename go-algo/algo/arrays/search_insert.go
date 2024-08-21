@@ -1,4 +1,4 @@
-package array
+package arrays
 
 // 二分法搜索
 // 定位

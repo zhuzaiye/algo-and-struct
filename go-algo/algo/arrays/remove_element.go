@@ -1,4 +1,4 @@
-package array
+package arrays
 
 import "fmt"
 
@@ -17,7 +17,6 @@ func removeElement(nums []int, val int) int {
 	return lp
 }
 
-
 // 首尾指针
 func removeElement2(nums []int, val int) int {
 	head, tail := 0, len(nums)
@@ -25,7 +24,7 @@ func removeElement2(nums []int, val int) int {
 		if nums[head] == val {
 			nums[head] = nums[tail-1]
 			tail--
-		}else{
+		} else {
 			head++
 		}
 	}

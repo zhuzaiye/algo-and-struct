@@ -1,6 +1,6 @@
 // 选择排序
 
-package array
+package arrays
 
 // 找到arr中最小项
 func findSmallest(arr []int) int {
